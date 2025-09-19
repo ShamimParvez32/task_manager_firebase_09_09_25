@@ -3,8 +3,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager_firebase_09_09_25/data/models/taskModel.dart';
-import 'package:task_manager_firebase_09_09_25/data/services/network_caller.dart';
-import 'package:task_manager_firebase_09_09_25/data/utlis/urls.dart';
 import 'package:task_manager_firebase_09_09_25/ui/widgets/show_snakebar_message.dart';
 
 class TaskItem extends StatefulWidget {
@@ -77,28 +75,29 @@ class _TaskItemState extends State<TaskItem> {
             children: [
               Divider(),
               ListTile(
-                title: Text('New', style: textTheme.titleSmall),
+
+                title: Text('New', style: textTheme.titleSmall?.copyWith(color: Colors.blue,backgroundColor: Colors.blueGrey)),
                 onTap: () {
                  _taskStatusUpdate('New');
                 },
               ),
               Divider(),
               ListTile(
-                title: Text('Progress', style: textTheme.titleSmall),
+                title: Text('Progress', style: textTheme.titleSmall?.copyWith(color: Colors.yellow,backgroundColor: Colors.blueGrey)),
                 onTap: () {
                   _taskStatusUpdate('Progress');
                 },
               ),
               Divider(),
               ListTile(
-                title: Text('Completed', style: textTheme.titleSmall),
+                title: Text('Completed', style: textTheme.titleSmall?.copyWith(color: Colors.green,backgroundColor: Colors.blueGrey),),
                 onTap: () {
                   _taskStatusUpdate('Completed');
                 },
               ),
               Divider(),
               ListTile(
-                title: Text('Cancelled', style: textTheme.titleSmall),
+                title: Text('Cancelled', style: textTheme.titleSmall?.copyWith(color: Colors.red,backgroundColor: Colors.blueGrey)),
                 onTap: () {
                  _taskStatusUpdate('Cancelled');
 
